@@ -1,0 +1,150 @@
+.main-block {
+    display: flex;
+    column-gap: rem(25);
+
+
+
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 rem(624);
+    }
+
+    @media screen and (max-width: em(991.98)) {
+        &__text {
+            flex: 0 1 auto;
+        }
+    }
+
+
+
+    &__name {
+        border: 1px solid rgba(129, 129, 139, 0.2);
+        border-radius: 12px;
+    }
+
+    &__name h2 {
+        font-weight: 300;
+        font-size: rem(10.8);
+        line-height: rem(17);
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #9C9C9C;
+        white-space: nowrap;
+        padding: rem(11) rem(19) rem(11) rem(19);
+    }
+
+    &__info p {
+        font-weight: 300;
+        @include av(font-size, 18, 14);
+        @include av(line-height, 27, 23);
+        color: #9C9C9C;
+    }
+
+    &__button {
+
+        &_blue {
+            background: #3D96F4;
+            border-radius: rem(50);
+            padding: rem(16) rem(29) rem(16) rem(29);
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            font-size: rem(14);
+            line-height: rem(22);
+            letter-spacing: rem(2);
+            color: #FFFFFF;
+            white-space: nowrap;
+        }
+
+        &_blue:hover {
+            background-color: #006bdd;
+            box-shadow: 0.5px -1px 1px white;
+        }
+
+        &_grey {
+            background: rgba(129, 129, 139, 0.2);
+            border-radius: rem(50);
+            padding: rem(16) rem(29) rem(16) rem(29);
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            font-size: rem(14);
+            line-height: rem(22);
+            letter-spacing: rem(2);
+            color: #FFFFFF;
+            white-space: nowrap;
+        }
+
+        &_grey:hover {
+            background: rgba(48, 48, 50, 0.2);
+            box-shadow: 0.5px -1px 1px white;
+        }
+
+
+    }
+
+    &__package-conteiner {
+        display: flex;
+        flex: 0 1 rem(624);
+        justify-content: space-evenly;
+        @include av(gap, 32, 5);
+    }
+
+    @media screen and (max-width: em(991.98)) {
+        &__package-conteiner {
+            flex: 0 1 auto;
+            margin-top: rem(40);
+        }
+    }
+
+    &__column1 {}
+
+    &__item-block {}
+}
+
+@media screen and (max-width: em(991.98)) {
+    .main-block {
+        flex-direction: column;
+    }
+
+    .main-block__button_blue,
+    .main-block__button_grey {
+        display: block;
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+
+.main-block-text {}
+
+.main {
+
+    &__block-title h2 {
+        font-weight: 500;
+        @include av(font-size, 52, 35);
+        @include av(line-height, 61, 44);
+    }
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(10rem);
+}
+
+.in {
+    transition: transform 0.5s, opacity 1s;
+}
+
+.inter {
+    transition: transform 1.2s;
+}
+
+.left {
+    transform: translateX(-50rem);
+}
+
+.right {
+    transform: translateX(50rem);
+}
