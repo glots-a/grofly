@@ -169,16 +169,16 @@ function imageDraw() {
 imageDraw()
 
 //------------------------------------------------
-setTimeout(function () {
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        for (let el of array) {
-            el.update()
-            el.draw()
-        }
-        requestAnimationFrame(animate)
-    }
-    animate()
 
-}, 10000)
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    for (let el of array) {
+        el.update()
+        el.draw()
+    }
+    requestAnimationFrame(animate)
+}
+animate()
+
+
 
