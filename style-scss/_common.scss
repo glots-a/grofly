@@ -148,3 +148,9 @@
 .right {
     transform: translateX(50rem);
 }
+
+.page__services img:hover,
+.page__testimonial img:hover,
+.page__blog img:hover {
+    transform: scale(1.2)
+}

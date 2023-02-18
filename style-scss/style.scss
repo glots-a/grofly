@@ -1152,6 +1152,10 @@
     &__item {}
 
     &__link {}
+
+    &__link>img:hover {
+        transform: scale(1.1)
+    }
 }
 
 .cl2 {
@@ -1177,6 +1181,10 @@
         @include av(font-size, 16, 12);
         @include av(line-height, 26, 22);
         color: #9C9C9C;
+    }
+
+    &__link:hover {
+        text-decoration: underline;
     }
 
     @media screen and (max-width: em(599)) {

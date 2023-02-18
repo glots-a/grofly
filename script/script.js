@@ -11,8 +11,6 @@ if (iconMenu) {
     });
 }
 const img = document.querySelector('#logo')
-console.log(window.innerWidth);
-console.log(img.src);
 
 if (window.innerWidth < 423) {
     img.src = "./img/Logo-min.svg"
@@ -20,7 +18,7 @@ if (window.innerWidth < 423) {
 
 // Reveal sections==============================
 const allSections = document.querySelectorAll('.section');
-console.log(allSections);
+
 
 const revealSection = function (entries, observer) {
     const [entry] = entries;
@@ -142,7 +140,7 @@ const sources = [
     }
 ]
 
-//===============================================================
+//....
 class Picture {
     constructor(x, y, img) {
         this.x = x;
@@ -157,18 +155,20 @@ class Picture {
     }
 }
 let n = 0
-// ============================================================
+// ...
 function imageDraw() {
     sources.forEach((source, index) => {
         const img = new Image()
         img.src = source.add
-        let position = source.w * index
-        array.push(new Picture(position, 0, img));
+        img.addEventListener('load', function () {
+            let position = source.w * index
+            array.push(new Picture(position, 0, img));
+        })
     })
 }
 imageDraw()
 
-//------------------------------------------------
+//...
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)

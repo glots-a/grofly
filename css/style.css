@@ -219,6 +219,12 @@ a:hover {
   transform: translateX(50rem);
 }
 
+.page__services img:hover,
+.page__testimonial img:hover,
+.page__blog img:hover {
+  transform: scale(1.2);
+}
+
 /* ================================ */
 [class*=__container] {
   max-width: 80em;
@@ -1671,6 +1677,10 @@ a:hover {
   display: flex;
   gap: 1rem;
 }
+.cl1__link > img:hover {
+  transform: scale(1.1);
+}
+
 .cl2__title {
   font-weight: 500;
   margin-bottom: 1.875rem;
@@ -1723,6 +1733,9 @@ a:hover {
   .cl2__link {
     line-height: calc(22px + 4 * (100vw / 1280));
   }
+}
+.cl2__link:hover {
+  text-decoration: underline;
 }
 @media screen and (max-width: 37.4375em) {
   .cl2__title {
