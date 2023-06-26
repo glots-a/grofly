@@ -114,27 +114,27 @@ const array = [];
 
 const sources = [
   {
-    add: '../img/startups/05.png',
+    add: './img/startups/05.png',
     w: 230,
   },
   {
-    add: '../img/startups/01.png',
+    add: './img/startups/01.png',
     w: 230,
   },
   {
-    add: '../img/startups/02.png',
+    add: './img/startups/02.png',
     w: 230,
   },
   {
-    add: '../img/startups/03.png',
+    add: './img/startups/03.png',
     w: 230,
   },
   {
-    add: '../img/startups/04.png',
+    add: './img/startups/04.png',
     w: 230,
   },
   {
-    add: '../img/startups/05.png',
+    add: './img/startups/05.png',
     w: 230,
   }
 ];
