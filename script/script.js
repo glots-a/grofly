@@ -106,77 +106,78 @@ formButton.addEventListener('click', function (e) {
     form.reset()
 })
 //canvas =========================================
-const canvas = document.getElementById('canvas')
-const ctx = canvas.getContext('2d')
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 canvas.width = 1152;
 canvas.height = 65;
-const array = []
+const array = [];
 
 const sources = [
-    {
-        add: '../img/startups/05.png',
-        w: 230,
-    },
-    {
-        add: '../img/startups/01.png',
-        w: 230,
-    },
-    {
-        add: '../img/startups/02.png',
-        w: 230,
-    },
-    {
-        add: '../img/startups/03.png',
-        w: 230,
+  {
+    add: '../img/startups/05.png',
+    w: 230,
+  },
+  {
+    add: '../img/startups/01.png',
+    w: 230,
+  },
+  {
+    add: '../img/startups/02.png',
+    w: 230,
+  },
+  {
+    add: '../img/startups/03.png',
+    w: 230,
+  },
+  {
+    add: '../img/startups/04.png',
+    w: 230,
+  },
+  {
+    add: '../img/startups/05.png',
+    w: 230,
+  }
+];
 
-    },
-    {
-        add: '../img/startups/04.png',
-        w: 230,
-    },
-    {
-        add: '../img/startups/05.png',
-        w: 230,
-    }
-]
-
-//....
 class Picture {
-    constructor(x, y, img) {
-        this.x = x;
-        this.y = y;
-        this.image = img;
-    }
-    update() {
-        this.x === canvas.width ? this.x = -230 : this.x += 1
-    }
-    draw() {
-        ctx.drawImage(this.image, this.x, this.y)
-    }
+  constructor(x, y, img) {
+    this.x = x;
+    this.y = y;
+    this.image = img;
+  }
+  update() {
+    this.x === canvas.width ? this.x = -230 : this.x += 1;
+  }
+  draw() {
+    ctx.drawImage(this.image, this.x, this.y);
+  }
 }
-let n = 0
-// ...
 
-function imageDraw() {
-    sources.forEach((source, index) => {
-        const img = new Image()
-        img.src = source.add
-        img.addEventListener('load', function () {
-            let position = source.w * index
-            array.push(new Picture(position, 0, img));
-        })
-    })
+async function imageDraw() {
+  for (const [index, source] of sources.entries()) {
+    const img = new Image();
+    img.src = source.add;
+
+    await new Promise((resolve) => {
+      img.addEventListener('load', () => {
+        let position = source.w * index;
+        array.push(new Picture(position, 0, img));
+        resolve();
+      });
+    });
+  }
+
+  animate();
 }
-imageDraw()
-
-//...
 
 function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    for (let el of array) {
-        el.update()
-        el.draw()
-    }
-    requestAnimationFrame(animate)
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let el of array) {
+    el.update();
+    el.draw();
+  }
+  requestAnimationFrame(animate);
 }
-animate()
+
+imageDraw();
+
