@@ -156,6 +156,7 @@ class Picture {
 }
 let n = 0
 // ...
+
 function imageDraw() {
     sources.forEach((source, index) => {
         const img = new Image()
@@ -179,6 +180,3 @@ function animate() {
     requestAnimationFrame(animate)
 }
 animate()
-
-
-

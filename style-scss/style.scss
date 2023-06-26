@@ -39,7 +39,7 @@
 
 /*====================================*/
 @at-root.header {
-    margin-top: em(32);
+    padding-top: em(32);
 
     &__menu {
         display: flex;
@@ -325,15 +325,7 @@
         background: rgba(85, 85, 96, 0.2);
         box-shadow: 0.5px -1px 1px white;
     }
-
-    // @media screen and (max-width: em(767.98)) {
-    //     &_grey {
-    //         min-width: 100%;
-    //         padding: rem(16) rem(80);
-    //     }
-    // }
 }
-
 
 @media screen and (max-width: em(991.98)) {
     .intro__container {
@@ -1118,8 +1110,7 @@
 
         }
 
-
-    }
+   }
 
     @media screen and (max-width: em(599)) {
         &__package-container {
